@@ -3102,7 +3102,7 @@ function apt_single_post_tagging($apt_post_id, $apt_mistake_checks = 1, $apt_ret
 							if($apt_settings['apt_wildcards'] == 1){ //run if wildcards are allowed
 
                                 if (preg_match('/\d+/', $apt_related_keyword_needle_wildcards)) { // If the keyword is a stock ticker which is in numeric format, we assume the surrounding strings will be in non-numeric format
-                                    $apt_related_keyword_needle_final = '/([^\d]+)'. $apt_related_keyword_needle_wildcards .'([^\d]+)/';
+                                    $apt_related_keyword_needle_final = '/([^\d])'. $apt_related_keyword_needle_wildcards .'([^\d])/';
                                 } else { // Otherwise, we do not even need space separators
                                     $apt_related_keyword_needle_final = '/'. $apt_related_keyword_needle_wildcards .'/';
                                 }
